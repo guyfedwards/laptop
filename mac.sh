@@ -28,21 +28,24 @@ cecho() {
 # Apps
 apps=(
   1password
-  tunnelblick
+  appcleaner
   alfred
   dropbox
-  google-chrome
-  slack
-  transmit
+  divvy
   evernote
-  appcleaner
+  google-chrome
+  karabiner
+  slack
   seil
   spotify
+  skype
+  the-unarchiver
+  transmit
+  transmission
+  tunnelblick
   vagrant
   virtualbox
   vlc
-  skype
-  transmission
 )
 
 fonts=(
@@ -56,7 +59,7 @@ binaries=(
 # Specify the location of the apps
 appdir="/Applications"
 
-cecho "Install App Store Apps and Chrome first!!" $red
+cecho "Install App Store Apps first!!" $red
 read -p "Press any key to continue..." -n1 -s
 echo "\n"
 
