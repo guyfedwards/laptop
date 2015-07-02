@@ -85,6 +85,9 @@ brew install bash
 # Update vim
 brew install vim
 
+# Tmux
+brew install tmux
+
 # Update grep
 cecho "updating grep" $yellow
 brew tap homebrew/dupes
