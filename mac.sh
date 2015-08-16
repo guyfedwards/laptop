@@ -15,7 +15,7 @@ cyan='\033[0;36m'
 
 # Resets the style
 reset=`tput sgr0`
- 
+
 # Color-echo. Credit @brandonb927
 # arg $1 = message
 # arg $2 = Color
@@ -23,7 +23,7 @@ cecho() {
   echo "${2}${1}${reset}"
   return
 }
- 
+
 # Homebrew shiznit
 # Apps
 apps=(
@@ -52,8 +52,12 @@ fonts=(
   font-meslo-lg-for-powerline
 )
 
-binaries=(
-  
+scripts=(
+
+)
+
+npm=(
+
 )
 
 # Specify the location of the apps
@@ -94,7 +98,6 @@ brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 cecho "grep updated" $green
 
-
 # Install homebrew-cask
 cecho "installing cask..." $yellow
 brew tap phinze/homebrew-cask
@@ -114,9 +117,21 @@ cecho "installing fonts..." $yellow
 brew cask install ${fonts[@]}
 cecho "fonts done" $green
 
+# Node
+brew install node
+
+# install node modules
+cecho "installing node modules" $yellow
+sudo npm install -g ${npm[@]}
+cecho "node modules done" $green
+
 # link with alfred
 brew cask alfred link
 
 # cleanup
 brew cleanup
+
+# npm
+
+
 
