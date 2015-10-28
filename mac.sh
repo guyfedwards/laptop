@@ -92,6 +92,9 @@ brew install vim
 # Tmux
 brew install tmux
 
+# Ag/Silver_searcher
+brew install the_silver_searcher
+
 # Update grep
 cecho "updating grep" $yellow
 brew tap homebrew/dupes
@@ -130,8 +133,6 @@ brew cask alfred link
 
 # cleanup
 brew cleanup
-
-# npm
 
 
 
