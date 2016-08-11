@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Script for setting up new mac
 # Let the games begin
@@ -53,7 +53,6 @@ fonts=(
 )
 
 scripts=(
-
 )
 
 npm=(
@@ -74,6 +73,9 @@ if test ! $(which brew); then
   brew doctor
   brew update
 fi
+
+# add taps
+brew tap aykamko/tag-ag
 
 # Install GNU core utilities (OS X ones are out of date)
 cecho "installing coreutils" $yellow
@@ -119,6 +121,11 @@ cecho "apps done" $green
 cecho "installing fonts..." $yellow
 brew cask install ${fonts[@]}
 cecho "fonts done" $green
+
+# install scripts
+cecho "installing scripts..." $yellow
+brew install ${scripts[@]}
+cecho "scripts done" $green
 
 # Node
 brew install node
