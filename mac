@@ -32,18 +32,16 @@ apps=(
   alfred
   dropbox
   divvy
-  evernote
   google-chrome
+  iterm,
   karabiner
+  postman,
+  sequel-pro,
   slack
   seil
   spotify
-  skype
   the-unarchiver
-  transmit
   transmission
-  tunnelblick
-  vagrant
   virtualbox
   vlc
 )
@@ -53,6 +51,9 @@ fonts=(
 )
 
 scripts=(
+    fzf,
+    googler,
+    shellcheck
 )
 
 npm=(
