@@ -14,7 +14,7 @@ magenta='\033[0;35m'
 cyan='\033[0;36m'
 
 # Resets the style
-reset=`tput sgr0`
+reset=$(tput sgr0)
 
 # Color-echo. Credit @brandonb927
 # arg $1 = message
@@ -33,10 +33,10 @@ apps=(
   dropbox
   divvy
   google-chrome
-  iterm,
+  iterm
   karabiner
-  postman,
-  sequel-pro,
+  postman
+  sequel-pro
   slack
   seil
   spotify
@@ -48,11 +48,13 @@ apps=(
 
 fonts=(
   font-meslo-lg-for-powerline
+  font-hack-nerd-font
 )
 
 scripts=(
-    fzf,
-    googler,
+    fzf
+    jq
+    googler
     shellcheck
 )
 
@@ -60,10 +62,14 @@ npm=(
 
 )
 
+gems=(
+    atlassian-stash
+)
+
 # Specify the location of the apps
 appdir="/Applications"
 
-cecho "Install App Store Apps first!!" $red
+cecho "Install App Store Apps first!!" "$red"
 read -p "Press any key to continue..." -n1 -s
 echo "\n"
 
@@ -131,9 +137,14 @@ cecho "scripts done" $green
 # Node
 brew install node
 
+# install gems
+cecho "installing ruby gems" "$yellow"
+gem install ${gems[@]}
+cecho "ruby gems done" "$green"
+
 # install node modules
-cecho "installing node modules" $yellow
-sudo npm install -g ${npm[@]}
+cecho "installing node modules" "$yellow"
+npm install -g ${npm[@]}
 cecho "node modules done" $green
 
 # link with alfred
